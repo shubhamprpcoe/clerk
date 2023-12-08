@@ -4,13 +4,7 @@
   "description": "zoom app auth Microservice",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app",
-    "debug": "node --inspect-brk app.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/shubhamprpcoe/zoom_auth.git"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
@@ -32,6 +26,8 @@
     "eslint": "^8.55.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.29.0",
-    "jest": "^29.7.0"
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.2",
+    "supertest": "^6.3.3"
   }
 }
