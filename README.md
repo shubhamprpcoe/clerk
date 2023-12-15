@@ -2,7 +2,7 @@
 
 How to run docker image?
 
-cd cleark
+cd cleark /n
 docker build .
 docker run <ID that genrated>
 
