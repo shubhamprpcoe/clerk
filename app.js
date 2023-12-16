@@ -3,6 +3,7 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import {} from 'dotenv/config';
 import { connectToDataBase } from './Utils/Config/connectdb.js';
+import { router } from './Router/SignUpRoute.js';
 
 const app = express();
 
@@ -23,7 +24,11 @@ connectToDataBase(DATABASE_URL);
 app.use(express.json());
 
 // Define a route
+
+app.use('/SignUpRoute', router);
+
 app.get('/', (req, res) => {
+  console.log(req.body);
   res.send('Hello, World!');
 });
 
