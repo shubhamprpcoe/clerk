@@ -2,6 +2,7 @@ import express from 'express';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import {} from 'dotenv/config';
+import { connectToDataBase } from './Utils/Config/connectdb.js';
 
 const app = express();
 
@@ -17,7 +18,7 @@ const { DATABASE_URL, PORT } = process.env;
 const port = PORT || 5000;
 
 // Connect to Database
-// connectToDataBase(DATABASE_URL);
+connectToDataBase(DATABASE_URL);
 
 app.use(express.json());
 
