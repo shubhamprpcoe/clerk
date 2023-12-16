@@ -1,5 +1,12 @@
 #Zoom Auth microservice
 # DEVELOPER GUID
+
+introduce .env variable
+
+PORT=4001
+MONGO_URL=
+DATABASE_URL=
+
 How to run docker image?
 
 cd cleark /n

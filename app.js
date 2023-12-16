@@ -1,6 +1,25 @@
-const express = require('express');
+import express from 'express';
+import cookieParser from 'cookie-parser';
+import cors from 'cors';
+import {} from 'dotenv/config';
+
 const app = express();
-const port = 4000; // You can use any available port
+
+// CORS policy
+app.use(cors(
+  { credentials: true, origin: 'http://localhost:3000' }
+));
+
+// cookieParser
+app.use(cookieParser());
+
+const { DATABASE_URL, PORT } = process.env;
+const port = PORT || 5000;
+
+// Connect to Database
+// connectToDataBase(DATABASE_URL);
+
+app.use(express.json());
 
 // Define a route
 app.get('/', (req, res) => {
