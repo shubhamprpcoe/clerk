@@ -37,3 +37,7 @@ add this extra rules to eslint config
     semi: [2, 'always']
 
   }
+# NOTES
+How message broker keys are workig
+
+PRODUCER==> EXCHANGE/DISTRIBUTER ==> 1) binding KEY_one--> QUEUE==>CONSUMER_ONE , 2)binding KEY_two--> QUEUE==>CONSUMER_TWO
