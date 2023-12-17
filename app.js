@@ -27,10 +27,10 @@ connectToDataBase(DATABASE_URL);
 app.use(express.json());
 
 
-// // connect to rabirmq channel
+// // connect to rabirmq channel (queue name, special binding key of exchanage to queue)
 // export let channel = await amqplib_CreateChannel("st1", "newQuw");
 
-// //Publish data to queue(  channel of connection, queue name, special binding key of exchanage and queue , and messsage we want to share )
+// //Publish data to queue(  channel of connection, queue name, special binding key of exchanage to queue , and messsage we want to share )
 // await amqplib_PublishChannel(
 //   channel,
 //   "st1",
@@ -38,7 +38,7 @@ app.use(express.json());
 //   "nwhhvvvvvvvvvvvvvvvvvhsss"
 // );
 
-// //revive data from queue (channel of connection, queue name, special binding key of exchanage and queue)
+// //revive data from queue (channel of connection, queue name, special binding key of exchanage to queue)
 // await amqplib_SubscribeChannel(channel, "st1", BINDING_KEY);
 
 
