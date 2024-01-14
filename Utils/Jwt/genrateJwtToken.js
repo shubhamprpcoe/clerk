@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-// const { JWT_SECRET_KEY } = process.env;
+const { JWT_SECRET_KEY } = process.env;
 
 // Genrating JWT by user ID
 

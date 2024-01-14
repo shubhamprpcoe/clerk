@@ -1,8 +1,10 @@
 #Zoom Auth microservice
+This service has a user registration and log in code 
+which use message broker to send data to redis further 
 # DEVELOPER GUID
 
 introduce .env variable
-
+s
 PORT=4001
 MONGO_URL=
 DATABASE_URL=

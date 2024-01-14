@@ -26,21 +26,24 @@ connectToDataBase(DATABASE_URL);
 
 app.use(express.json());
 
+export let rabbitMqChannelToPublishData;
+(async function () {
+  // // connect to rabirmq channel (queue name, special binding key of exchanage to queue)
+  rabbitMqChannelToPublishData = await amqplib_CreateChannel(
+    "QueueName_redis_userRegistrationData",
+    "BindingKey_Aurhorization"
+  );
+  // //Publish data to queue(  channel of connection, queue name, special binding key of exchanage to queue , and messsage we want to share )
+  // await amqplib_PublishChannel(
+  //   rabbitMqChannelToPublishData,
+  //   "st1",
+  //   BINDING_KEY,
+  //   "nwhhxxvvvvvvvvvvvvvvvdddvvhsss"
+  // );
+})();
 
-// // connect to rabirmq channel (queue name, special binding key of exchanage to queue)
-// export let channel = await amqplib_CreateChannel("st1", "newQuw");
-
-// //Publish data to queue(  channel of connection, queue name, special binding key of exchanage to queue , and messsage we want to share )
-// await amqplib_PublishChannel(
-//   channel,
-//   "st1",
-//   BINDING_KEY,
-//   "nwhhvvvvvvvvvvvvvvvvvhsss"
-// );
-
-// //revive data from queue (channel of connection, queue name, special binding key of exchanage to queue)
+//revive data from queue (channel of connection, queue name, special binding key of exchanage to queue)
 // await amqplib_SubscribeChannel(channel, "st1", BINDING_KEY);
-
 
 // Define a route
 
@@ -55,3 +58,5 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
+
+
